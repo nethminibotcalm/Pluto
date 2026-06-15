@@ -301,15 +301,17 @@ export default function App() {
             </span>
           </div>
           <img
-            src={buyNowBear} alt=""
-            className="buy-now-bear pointer-events-none absolute z-20"
-            style={{
-              width: '212.67px',
-              height: '250.84px',
-              left: '236px',
-              top: '106px',
-            }}
-          />
+  src={buyNowBear} alt=""
+  className="buy-now-bear pointer-events-none absolute z-20"
+  style={{
+    width: 'auto',
+    height: '60%',
+    bottom: 0,
+    right: '33%',
+    left: 'auto',
+    top: 'auto',
+  }}
+/>
         </section>
 
       </div>
