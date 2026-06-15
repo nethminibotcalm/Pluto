@@ -125,3 +125,7 @@ body,
     right: 5% !important;
   }
 }
+/* Paragraph spacing inside SectionCard text */
+.section-text p + p {
+  margin-top: 1rem;
+}

@@ -28,7 +28,7 @@ export default function App() {
           left: 0,
           objectFit: 'cover',
           objectPosition: 'center top',
-          opacity: 0.5,
+          opacity: 0.3,
         }}
       />
 
@@ -86,14 +86,14 @@ export default function App() {
         </SectionCard>
 
         {/* Roadmap */}
-        <SectionCard
-          title="Roadmap"
-          className="bg-[#c8d7eb]/0 cell-roadmap"
-          titleClassName="font-cartoon font-normal leading-none text-[#000000]"
-          textClassName="font-cartoon font-semibold text-[#11173E] leading-snug space-y-2"
-          titleStyle={{ fontSize: 'clamp(1.5rem, 2.8vw, 3.5rem)' }}
-          textStyle={{ fontSize: 'clamp(0.55rem, 0.85vw, 0.95rem)' }}
-        >
+     <SectionCard
+  title="Roadmap"
+  className="bg-[#c8d7eb]/0 cell-roadmap"
+  titleClassName="font-cartoon font-normal leading-none text-[#000000]"
+  textClassName="font-cartoon font-semibold text-[#11173E] leading-snug section-text"
+  titleStyle={{ fontSize: 'clamp(1.5rem, 2.8vw, 3.5rem)' }}
+  textStyle={{ fontSize: 'clamp(0.55rem, 0.85vw, 0.95rem)' }}
+>
           <p>officially launch Pluto Token and establish a vibrant, engaged community through social media, partnerships, and educational content.</p>
           <p>Develop and integrate Pluto Token into key platforms, enabling real-world use cases.</p>
           <p>Focus on expanding Pluto Token's ecosystem, introducing new features, and exploring innovative ways.</p>
@@ -146,6 +146,7 @@ export default function App() {
                 color: '#000',
                 lineHeight: 1,
                 marginBottom: '1rem',
+
               }}
             >
               Tokenomics
@@ -204,14 +205,14 @@ export default function App() {
         </section>
 
         {/* How to Buy */}
-        <SectionCard
-          title="How to Buy"
-          className="bg-[#c8d7eb]/0 cell-howtobuy"
-          titleClassName="font-cartoon font-normal leading-none text-[#000000]"
-          textClassName="font-cartoon font-semibold text-[#11173E] leading-snug space-y-2"
-          titleStyle={{ fontSize: 'clamp(1.5rem, 2.8vw, 3.5rem)' }}
-          textStyle={{ fontSize: 'clamp(0.55rem, 0.85vw, 0.95rem)' }}
-        >
+    <SectionCard
+  title="How to Buy"
+  className="bg-[#c8d7eb]/0 cell-howtobuy"
+  titleClassName="font-cartoon font-normal leading-none text-[#000000]"
+  textClassName="font-cartoon font-semibold text-[#11173E] leading-snug section-text"
+  titleStyle={{ fontSize: 'clamp(1.5rem, 2.8vw, 3.5rem)' }}
+  textStyle={{ fontSize: 'clamp(0.55rem, 0.85vw, 0.95rem)' }}
+>
           <p>Prepare Your Rocket Fuel- Set up a digital wallet to fuel your journey to Pluto.</p>
           <p>Blast Off to the Exchange - Visit a trusted decentralized exchange (DEX)</p>
           <p>Land on Pluto - Once your wallet is connected, swap your ETH or BNB for Pluto Token and watch your assets launch into the cosmos!</p>
@@ -304,7 +305,7 @@ export default function App() {
             className="buy-now-bear pointer-events-none absolute z-20"
             style={{
               width: '212.67px',
-              height: '313.84px',
+              height: '250.84px',
               left: '236px',
               top: '106px',
             }}
