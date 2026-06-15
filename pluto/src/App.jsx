@@ -12,36 +12,39 @@ import meditatingBear from './assets/Images/image (5).png'
 
 export default function App() {
   return (
-  <div
-  className="relative w-full overflow-hidden"
+    <div
+      className="relative w-full overflow-hidden"
+      style={{ height: '100vh' }}
+    >
+      {/* Single bg image — 30% opacity, offset like Figma */}
+      {/* Single bg image — 30% opacity, full cover */}
+<img
+  src={heroPanel}
+  alt=""
+  className="pointer-events-none absolute z-0"
   style={{
-    height: '100vh',
-    backgroundImage: `url(${heroPanel})`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',
-    
+    width: '100%',
+    height: '2572px',
+    top: -300,
+    left: 0,
+    objectFit: 'cover',
+    objectPosition: 'center top',
+    opacity: 0.5,
   }}
->
-  {/* 70% opacity overlay matching cells */}
-  <div className="absolute inset-0 z-0 bg-[#c8d7eb]/70 " />
+/>
 
-      {/* ── Floating bears ── sit on the row-1/row-2 boundary at column borders */}
-      {/* Standing bear: col1/col2 border ≈ 33.5% from left */}
+      {/* ── Floating bears ── */}
       <img
         src={standingBear} alt=""
         className="pointer-events-none absolute z-30"
         style={{
           width: '8%',
           height: 'auto',
-          /* Grid: padding=24px, gap=24px on every side.
-             2p+2g = 96 ; 2p+g = 72 ; p+g = 48 */
           bottom: 'calc( (886/1342) * (100vh - 96px) + 48px )',
           left: 'calc( 24px + (628/1842) * (100vw - 72px) + 24px )',
           transform: 'translateX(-50%) scaleX(-1)',
         }}
       />
-      {/* Astronaut bear: col2/col3 border ≈ 68% from left */}
       <img
         src={astronautBear} alt=""
         className="pointer-events-none absolute z-30"
@@ -63,9 +66,7 @@ export default function App() {
           width: '100%',
           padding: '24px',
           gap: '24px',
-          /* 3 cols: Figma widths 628 : 628 : 506 out of total 1842 */
           gridTemplateColumns: '628fr 628fr 506fr',
-          /* 3 rows: Figma heights 456 : 429 : 457 */
           gridTemplateRows: '456fr 429fr 457fr',
           boxSizing: 'border-box',
         }}
@@ -76,7 +77,7 @@ export default function App() {
         {/* About Us */}
         <SectionCard
           title="About Us"
-          className="bg-[#c8d7eb]/70"
+          className="bg-[#c8d7eb]/0"
           titleClassName="font-cartoon font-normal leading-none text-[#000000]"
           textClassName="font-cartoon font-semibold text-[#11173E] leading-snug"
           titleStyle={{ fontSize: 'clamp(1.5rem, 2.8vw, 3.5rem)' }}
@@ -89,7 +90,7 @@ export default function App() {
         {/* Roadmap */}
         <SectionCard
           title="Roadmap"
-          className="bg-[#c8d7eb]/70"
+          className="bg-[#c8d7eb]/0"
           titleClassName="font-cartoon font-normal leading-none text-[#000000]"
           textClassName="font-cartoon font-semibold text-[#11173E] leading-snug space-y-2"
           titleStyle={{ fontSize: 'clamp(1.5rem, 2.8vw, 3.5rem)' }}
@@ -101,14 +102,19 @@ export default function App() {
         </SectionCard>
 
         {/* Planets (top-right) */}
-        <section
-          className="relative box-border overflow-hidden rounded-xl border-[2px] border-black/70 shadow-md"
-          style={{
-            backgroundImage: `url(${spaceBoard})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        >
+        <section className="relative box-border overflow-hidden rounded-xl border-[2px] border-black/70 shadow-md">
+          <img
+            src={spaceBoard}
+            alt="space background"
+            style={{
+              position: 'absolute',
+              width: '970px',
+              height: '600px',
+              left: '-227px',
+              top: '-20px',
+            }}
+          />
+          <div className="absolute inset-0 bg-black/10" />
           <img
             src={planetArt}
             alt="planets"
@@ -118,6 +124,7 @@ export default function App() {
               height: '173.09px',
               left: '85px',
               top: '51px',
+              zIndex: 10,
             }}
           />
         </section>
@@ -125,46 +132,41 @@ export default function App() {
         {/* ── ROW 2 ── */}
 
         {/* Tokenomics */}
-<section
-  className="relative box-border overflow-hidden rounded-xl border-[2px] border-black/70 shadow-md"
-  style={{
-    backgroundImage: `url(${tokenomicsBg})`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    height: '100%',
-  }}
->
-  <div className="absolute inset-0 bg-white/10" />
-
-  <div className="relative z-10 flex h-full flex-col items-center justify-center text-center px-4 py-8">
-    <h2
-      style={{
-        fontFamily: 'Marhey, cursive',
-        fontSize: 'clamp(1.4rem, 2.5vw, 3rem)',
-        fontWeight: 900,
-        color: '#000',
-        lineHeight: 1,
-        marginBottom: '1rem',
-      }}
-    >
-      Tokenomics
-    </h2>
-
-    <div
-      style={{
-        fontFamily: 'Marhey, cursive',
-        fontSize: 'clamp(0.75rem, 1.2vw, 1.2rem)',
-        fontWeight: 600,
-        color: '#11173E',
-        lineHeight: 1.6,
-      }}
-    >
-      <p>Total Supply - 6 M</p>
-      <p>Burnt Liquidity</p>
-      <p>Buy/Sell Tax - 0%</p>
-    </div>
-  </div>
-</section>
+        <section className="relative overflow-hidden rounded-xl border-[2px] border-black/70 shadow-md">
+          <img
+            src={tokenomicsBg}
+            alt=""
+            className="absolute inset-0 w-full h-full object-cover opacity-80"
+          />
+          <div className="absolute inset-0 bg-white/10" />
+          <div className="relative z-10 flex h-full flex-col items-center justify-center text-center px-4 py-8">
+            <h2
+              style={{
+                fontFamily: 'Marhey, cursive',
+                fontSize: 'clamp(1.4rem, 2.5vw, 3rem)',
+                fontWeight: 900,
+                color: '#000',
+                lineHeight: 1,
+                marginBottom: '1rem',
+              }}
+            >
+              Tokenomics
+            </h2>
+            <div
+              style={{
+                fontFamily: 'Marhey, cursive',
+                fontSize: 'clamp(0.75rem, 1.2vw, 1.2rem)',
+                fontWeight: 600,
+                color: '#11173E',
+                lineHeight: 1.6,
+              }}
+            >
+              <p>Total Supply - 6 M</p>
+              <p>Burnt Liquidity</p>
+              <p>Buy/Sell Tax - 0%</p>
+            </div>
+          </div>
+        </section>
 
         {/* PLUTO hero */}
         <section
@@ -206,7 +208,7 @@ export default function App() {
         {/* How to Buy */}
         <SectionCard
           title="How to Buy"
-          className="bg-[#c8d7eb]/70"
+          className="bg-[#c8d7eb]/0"
           titleClassName="font-cartoon font-normal leading-none text-[#000000]"
           textClassName="font-cartoon font-semibold text-[#11173E] leading-snug space-y-2"
           titleStyle={{ fontSize: 'clamp(1.5rem, 2.8vw, 3.5rem)' }}
@@ -220,18 +222,16 @@ export default function App() {
         {/* ── ROW 3 ── */}
 
         {/* Join Now */}
-        <section className="relative box-border overflow-hidden rounded-xl border-[2px] border-black/70 shadow-md bg-[#c8d7eb]/70">
+        <section className="relative box-border overflow-hidden rounded-xl border-[2px] border-black/0 shadow-md bg-[#c8d7eb]/70">
           <div className="relative z-10 flex h-full flex-col items-center justify-start pt-3 px-4 text-center gap-2">
             <p style={{ fontFamily: 'Marhey, cursive', fontSize: 'clamp(0.55rem, 0.85vw, 0.9rem)', fontWeight: 600, color: '#11173E', lineHeight: 1.5 }}>
               Embark on an interstellar journey with us! Join the Pluto Token community today and be part of a vibrant group of explorers, innovators, and dreamers.
             </p>
             <div className="flex items-center gap-3">
-              {/* Telegram icon */}
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M21.05 3.6 2.8 10.8c-1.05.42-1.04 1.4.02 1.8l4.6 1.7 1.8 5.6c.24.7 1.1.86 1.66.34l2.5-2.3 4.6 3.4c.7.5 1.7.14 1.9-.7l3.2-15c.22-.96-.6-1.7-1.53-1.04Zm-4.3 3.4-7.6 7-0.3 4.3-1.5-4.6 9.4-6.7Z" fill="#000"/>
               </svg>
               <span style={{ fontFamily: 'Marhey, cursive', fontSize: 'clamp(1.2rem, 2.2vw, 2rem)', fontWeight: 900, color: '#000' }}>JOIN NOW</span>
-              {/* X / refresh-style icon */}
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M17.5 1H21l-7.2 8.2L22 23h-6.9l-5.4-7.1L3.4 23H0l7.7-8.8L0 1h7l4.9 6.5L17.5 1Zm-2 19.7h1.9L6.6 2.6H4.6l10.9 18.1Z" fill="#000"/>
               </svg>
@@ -247,7 +247,7 @@ export default function App() {
         {/* Our Story */}
         <SectionCard
           title="Our Story"
-          className="bg-[#c8d7eb]/70"
+          className="bg-[#c8d7eb]/0"
           titleClassName="font-cartoon font-normal leading-none text-[#000000]"
           textClassName="font-cartoon font-semibold text-[#11173E] leading-snug space-y-2"
           titleStyle={{ fontSize: 'clamp(1.5rem, 2.8vw, 3.5rem)' }}
@@ -260,8 +260,19 @@ export default function App() {
         {/* Buy Now */}
         <section
           className="relative box-border overflow-hidden rounded-xl border-[2px] border-black/70 shadow-md"
-          style={{ backgroundImage: `url(${spaceBoard})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
         >
+          <img
+            src={tokenomicsBg}
+            alt=""
+            style={{
+              position: 'absolute',
+              width: '1436px',
+              height: '874px',
+              left: '-122px',
+              top: '-384px',
+              objectFit: 'cover',
+            }}
+          />
           <div
             className="absolute z-20 flex items-center justify-center rounded-full bg-[#e02020]"
             style={{
@@ -287,8 +298,13 @@ export default function App() {
           </div>
           <img
             src={buyNowBear} alt=""
-            className="pointer-events-none absolute bottom-0 right-0 z-20"
-            style={{ height: '88%', width: 'auto' }}
+            className="pointer-events-none absolute z-20"
+            style={{
+              width: '212.67px',
+              height: '313.84px',
+              left: '236px',
+              top: '106px',
+            }}
           />
         </section>
 
