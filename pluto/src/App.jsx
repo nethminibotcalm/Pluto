@@ -12,10 +12,9 @@ import meditatingBear from './assets/Images/image (5).png'
 
 export default function App() {
   return (
-    <div
-      className="relative w-full overflow-x-hidden overflow-y-auto"
-      style={{ minHeight: '100vh' }}
-    >
+   <div
+  className="relative w-full page-wrapper"
+>
       {/* Single bg image — untouched */}
       <img
         src={heroPanel}
@@ -61,7 +60,7 @@ export default function App() {
         className="relative z-10 main-grid"
         style={{
           display: 'grid',
-          minHeight: '100vh',
+          height: '100vh',
           width: '100%',
           padding: '24px',
           gap: '24px',
@@ -86,14 +85,14 @@ export default function App() {
         </SectionCard>
 
         {/* Roadmap */}
-     <SectionCard
-  title="Roadmap"
-  className="bg-[#c8d7eb]/0 cell-roadmap"
-  titleClassName="font-cartoon font-normal leading-none text-[#000000]"
-  textClassName="font-cartoon font-semibold text-[#11173E] leading-snug section-text"
-  titleStyle={{ fontSize: 'clamp(1.5rem, 2.8vw, 3.5rem)' }}
-  textStyle={{ fontSize: 'clamp(0.55rem, 0.85vw, 0.95rem)' }}
->
+        <SectionCard
+          title="Roadmap"
+          className="bg-[#c8d7eb]/0 cell-roadmap"
+          titleClassName="font-cartoon font-normal leading-none text-[#000000]"
+          textClassName="font-cartoon font-semibold text-[#11173E] leading-snug section-text"
+          titleStyle={{ fontSize: 'clamp(1.5rem, 2.8vw, 3.5rem)' }}
+          textStyle={{ fontSize: 'clamp(0.55rem, 0.85vw, 0.95rem)' }}
+        >
           <p>officially launch Pluto Token and establish a vibrant, engaged community through social media, partnerships, and educational content.</p>
           <p>Develop and integrate Pluto Token into key platforms, enabling real-world use cases.</p>
           <p>Focus on expanding Pluto Token's ecosystem, introducing new features, and exploring innovative ways.</p>
@@ -146,7 +145,6 @@ export default function App() {
                 color: '#000',
                 lineHeight: 1,
                 marginBottom: '1rem',
-
               }}
             >
               Tokenomics
@@ -205,14 +203,14 @@ export default function App() {
         </section>
 
         {/* How to Buy */}
-    <SectionCard
-  title="How to Buy"
-  className="bg-[#c8d7eb]/0 cell-howtobuy"
-  titleClassName="font-cartoon font-normal leading-none text-[#000000]"
-  textClassName="font-cartoon font-semibold text-[#11173E] leading-snug section-text"
-  titleStyle={{ fontSize: 'clamp(1.5rem, 2.8vw, 3.5rem)' }}
-  textStyle={{ fontSize: 'clamp(0.55rem, 0.85vw, 0.95rem)' }}
->
+        <SectionCard
+          title="How to Buy"
+          className="bg-[#c8d7eb]/0 cell-howtobuy"
+          titleClassName="font-cartoon font-normal leading-none text-[#000000]"
+          textClassName="font-cartoon font-semibold text-[#11173E] leading-snug section-text"
+          titleStyle={{ fontSize: 'clamp(1.5rem, 2.8vw, 3.5rem)' }}
+          textStyle={{ fontSize: 'clamp(0.55rem, 0.85vw, 0.95rem)' }}
+        >
           <p>Prepare Your Rocket Fuel- Set up a digital wallet to fuel your journey to Pluto.</p>
           <p>Blast Off to the Exchange - Visit a trusted decentralized exchange (DEX)</p>
           <p>Land on Pluto - Once your wallet is connected, swap your ETH or BNB for Pluto Token and watch your assets launch into the cosmos!</p>
@@ -301,17 +299,17 @@ export default function App() {
             </span>
           </div>
           <img
-  src={buyNowBear} alt=""
-  className="buy-now-bear pointer-events-none absolute z-20"
-  style={{
-    width: 'auto',
-    height: '60%',
-    bottom: 0,
-    right: '33%',
-    left: 'auto',
-    top: 'auto',
-  }}
-/>
+            src={buyNowBear} alt=""
+            className="buy-now-bear pointer-events-none absolute z-20"
+            style={{
+              width: 'auto',
+              height: '60%',
+              bottom: 0,
+              right: '33%',
+              left: 'auto',
+              top: 'auto',
+            }}
+          />
         </section>
 
       </div>
