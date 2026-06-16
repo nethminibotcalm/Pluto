@@ -32,6 +32,12 @@ body,
   height: 100vh;
 }
 
+/* Hide mobile bears on desktop/tablet */
+.mobile-bear-aboutus,
+.mobile-bear-roadmap {
+  display: none;
+}
+
 /* Tablet: 2 columns, scrollable */
 @media (max-width: 1024px) {
   html,
@@ -153,6 +159,12 @@ body,
 
   .floating-bear {
     display: none !important;
+  }
+
+  /* Show mobile bears */
+  .mobile-bear-aboutus,
+  .mobile-bear-roadmap {
+    display: block !important;
   }
 
   .pluto-bear {

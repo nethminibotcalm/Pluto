@@ -12,26 +12,24 @@ import meditatingBear from './assets/Images/image (5).png'
 
 export default function App() {
   return (
-   <div
-  className="relative w-full page-wrapper"
->
-      {/* Single bg image — untouched */}
+    <div className="relative w-full page-wrapper">
+      {/* Single bg image */}
       <img
-  src={heroPanel}
-  alt=""
-  className="pointer-events-none absolute z-0"
-  style={{
-    width: '100%',
-    height: '100%',
-    top: 0,
-    left: 0,
-    objectFit: 'cover',
-    objectPosition: 'center top',
-    opacity: 0.3,
-  }}
-/>
+        src={heroPanel}
+        alt=""
+        className="pointer-events-none absolute z-0"
+        style={{
+          width: '100%',
+          height: '100%',
+          top: 0,
+          left: 0,
+          objectFit: 'cover',
+          objectPosition: 'center top',
+          opacity: 0.3,
+        }}
+      />
 
-      {/* ── Floating bears ── */}
+      {/* ── Floating bears — desktop/tablet only ── */}
       <img
         src={standingBear} alt=""
         className="floating-bear standing pointer-events-none absolute z-30"
@@ -82,6 +80,12 @@ export default function App() {
           textStyle={{ fontSize: 'clamp(0.55rem, 0.85vw, 0.95rem)' }}
         >
           <p>Pluto Token is a celestial cryptocurrency inspired by the mysterious dwarf planet, Pluto. Just as Pluto holds a unique place in our solar system, this token represents innovation, exploration, and discovery in the world of digital assets. With a focus on community-driven growth and transparency, Pluto Token aims to bring a sense of wonder and excitement to the crypto space. Whether you're a seasoned investor or a newcomer, Pluto Token is here to offer an out-of-this-world experience. Join us on this cosmic journey as we venture beyond the stars!</p>
+          {/* Standing bear — mobile only */}
+          <img
+            src={standingBear} alt=""
+            className="mobile-bear-aboutus pointer-events-none absolute z-30"
+            style={{ width: '30%', height: 'auto', bottom: 0, right: 0, transform: 'scaleX(-1)' }}
+          />
         </SectionCard>
 
         {/* Roadmap */}
@@ -96,6 +100,12 @@ export default function App() {
           <p>officially launch Pluto Token and establish a vibrant, engaged community through social media, partnerships, and educational content.</p>
           <p>Develop and integrate Pluto Token into key platforms, enabling real-world use cases.</p>
           <p>Focus on expanding Pluto Token's ecosystem, introducing new features, and exploring innovative ways.</p>
+          {/* Astronaut bear — mobile only */}
+          <img
+            src={astronautBear} alt=""
+            className="mobile-bear-roadmap pointer-events-none absolute z-30"
+            style={{ width: '25%', height: 'auto', bottom: 0, right: 0 }}
+          />
         </SectionCard>
 
         {/* Planets (top-right) */}
